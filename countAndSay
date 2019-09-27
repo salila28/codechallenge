@@ -1,0 +1,18 @@
+#create a function that will read the previous number and compare the first 2 numbers till end of string. If the numbers are same increment count and return the count , number being processed . Append result to empty string and return - join result . Call function in for loop till nth value
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        result = []
+        for j in range(n - 1):
+            i = 0
+            s='1'
+            print(s)
+            while i < len(s):
+                count = 1
+                print("count",count)
+                while i + 1 < len(s) and s[i] == s[i + 1]:
+                    count += 1
+                    i += 1
+                    print("inside loop",str(count)+s[i])
+                result.append(str(count) + s[i])
+                i += 1
+            return ''.join(result)
